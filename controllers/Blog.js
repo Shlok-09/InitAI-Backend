@@ -68,8 +68,6 @@ module.exports.DeleteBlog = async (req, res, next) => {
 
         const blog = await Blog.findByIdAndDelete(_id)
 
-        console.log(!blog);
-
         if (blog) {
             return res.status(200).json(blog)
         }
