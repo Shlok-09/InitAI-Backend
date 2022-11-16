@@ -1,5 +1,5 @@
 const { User } = require('../models')
-const { AddUserDTO, UserLoginDTO } = require('../dto')
+const { AddUserDTO, UserLoginDTO, DeleteUserDTO } = require('../dto')
 const { GeneratePassword, GenerateSalt, ValidatePassword, GenerateSignature } = require('../utility')
 
 module.exports.AddUser = async (req, res, next) => {
@@ -31,6 +31,8 @@ module.exports.AddUser = async (req, res, next) => {
 
 module.exports.GetUser = async (req, res, next) => {
 
+    await G
+
     const { _id } = req.query
 
     if (_id) {
@@ -49,18 +51,25 @@ module.exports.GetUser = async (req, res, next) => {
 
 module.exports.UpdateUser = async (req, res, next) => {
 
-    const { _id, role } = req.body
+    await AddUserDTO.validateAsync(req.body)
 
-    if (_id) {
+    const { email, password, role } = req.body
 
-        const user = await User.findById(_id)
+    const user = await User.findOne({ email: email })
 
-        user.role = role
+    if (user) {
 
-        const result = await user.save()
+        const validation = await ValidatePassword(password, user.password, user.salt)
 
-        if (result) {
-            return res.status(200).json(user)
+        if (validation) {
+
+            user.role = role
+
+            const result = await user.save()
+
+            if (result) {
+                return res.status(200).json(user)
+            }
         }
     }
 
@@ -71,14 +80,23 @@ module.exports.UpdateUser = async (req, res, next) => {
 
 module.exports.DeleteUser = async (req, res, next) => {
 
-    const { _id } = req.body
+    await DeleteUserDTO.validateAsync(req.body)
 
-    if (_id) {
+    const { email, password } = req.body
 
-        const user = await User.findByIdAndDelete(_id)
+    const user = await User.findOne({ email: email })
 
-        if (user) {
-            return res.status(200).json(user)
+    if (user) {
+
+        const validation = await ValidatePassword(password, user.password, user.salt)
+
+        if (validation) {
+
+            const result = await User.findByIdAndDelete(user._id)
+
+            if (result) {
+                return res.status(200).json(user)
+            }
         }
     }
 
@@ -88,7 +106,7 @@ module.exports.DeleteUser = async (req, res, next) => {
 }
 
 module.exports.UserLogin = async (req, res, next) => {
-    
+
     await UserLoginDTO.validateAsync(req.body)
 
     const { email, password } = req.body;

@@ -1,3 +1,4 @@
+const { AddBlogDTO, UpdateBlogDTO } = require('../dto/Blog.dto')
 const { Blog } = require('../models')
 
 module.exports.GetBlog = async (req, res, next) => {
@@ -20,12 +21,20 @@ module.exports.GetBlog = async (req, res, next) => {
 
 module.exports.AddBlog = async (req, res, next) => {
 
-    const { content } = req.body
+    const validate = await AddBlogDTO.validateAsync(req.body)
 
-    if (content) {
-        
+    if (validate.value === {}) {
+
+        const { authors, domains, dateOfPublish, readTime, title, mainImage, content } = req.body
+
         const blog = await Blog.create({
-            content: content
+            authors: authors,
+            domains: domains,
+            dateOfPublish: dateOfPublish,
+            readTime: readTime,
+            mainImage: mainImage,
+            content: content,
+            title: title
         })
 
         if (blog) {
@@ -40,13 +49,22 @@ module.exports.AddBlog = async (req, res, next) => {
 
 module.exports.UpdateBlog = async (req, res, next) => {
 
-    const { _id, content } = req.body
-
-    if (_id) {
+    const validate = await UpdateBlogDTO.validateAsync(req.body)
+    
+    
+    if (validate.value === {}) {
+        
+        const { authors, domains, dateOfPublish, readTime, title, mainImage, content, _id } = req.body
 
         const blog = await Blog.findById(_id)
 
         blog.content = content
+        blog.authors = authors
+        blog.domains = domains
+        blog.dateOfPublish = dateOfPublish
+        blog.readTime = readTime
+        blog.title = title
+        blog.mainImage = mainImage
 
         const result = await blog.save()
 
