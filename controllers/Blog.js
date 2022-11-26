@@ -1,4 +1,4 @@
-const { AddBlogDTO, UpdateBlogDTO } = require('../dto/Blog.dto')
+const { AddBlogDTO, UpdateBlogDTO, DeleteBlogDTO } = require('../dto')
 const { Blog } = require('../models')
 
 module.exports.GetBlog = async (req, res, next) => {
@@ -46,28 +46,24 @@ module.exports.AddBlog = async (req, res, next) => {
 
 module.exports.UpdateBlog = async (req, res, next) => {
 
-    const validate = await UpdateBlogDTO.validateAsync(req.body)
+    await UpdateBlogDTO.validateAsync(req.body)
 
+    const { authors, domains, dateOfPublish, readTime, title, mainImage, content, _id } = req.body
 
-    if (validate.value === {}) {
+    const blog = await Blog.findById(_id)
 
-        const { authors, domains, dateOfPublish, readTime, title, mainImage, content, _id } = req.body
+    blog.content = content
+    blog.authors = authors
+    blog.domains = domains
+    blog.dateOfPublish = dateOfPublish
+    blog.readTime = readTime
+    blog.title = title
+    blog.mainImage = mainImage
 
-        const blog = await Blog.findById(_id)
+    const result = await blog.save()
 
-        blog.content = content
-        blog.authors = authors
-        blog.domains = domains
-        blog.dateOfPublish = dateOfPublish
-        blog.readTime = readTime
-        blog.title = title
-        blog.mainImage = mainImage
-
-        const result = await blog.save()
-
-        if (result) {
-            return res.status(200).json(blog)
-        }
+    if (result) {
+        return res.status(200).json(blog)
     }
 
     return res.status(400).json({
@@ -76,6 +72,8 @@ module.exports.UpdateBlog = async (req, res, next) => {
 }
 
 module.exports.DeleteBlog = async (req, res, next) => {
+
+    await DeleteBlogDTO.validateAsync(req.body)
 
     const { _id } = req.body
 

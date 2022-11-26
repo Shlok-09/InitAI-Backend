@@ -35,3 +35,7 @@ module.exports.UpdateBlogDTO = Joi.object({
 
     _id: Joi.string().required()
 })
+
+module.exports.DeleteBlogDTO = Joi.object({
+    _id: Joi.string().required()
+})
