@@ -7,7 +7,7 @@ const UserSchema = new mongoose.Schema({
     salt: {type: String, required: true},
     role:{
         type: String,
-        enum: ['visitor', 'junior', 'senior', 'admin'],
+        enum: ['visitor', 'junior', 'senior'],
         default: 'visitor'
     },
 },{

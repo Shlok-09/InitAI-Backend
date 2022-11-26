@@ -6,7 +6,9 @@ module.exports.AddUserDTO = Joi.object({
 
     password: Joi.string().required(),
 
-    role: Joi.string().required()
+    role: Joi.string().required(),
+
+    admin_secret: Joi.string().required()
 })
 
 module.exports.DeleteUserDTO = Joi.object({
@@ -15,6 +17,7 @@ module.exports.DeleteUserDTO = Joi.object({
 
     password: Joi.string().required(),
 
+    admin_secret: Joi.string().required()
 })
 
 module.exports.UserLoginDTO = Joi.object({

@@ -6,7 +6,7 @@ module.exports.AddBlogDTO = Joi.object({
 
     domains: Joi.array().items(Joi.string()).required(),
 
-    dateOfPublish: Joi.date().required(),
+    dateOfPublish: Joi.string().required(),
 
     readTime: Joi.string().required(),
 
@@ -23,7 +23,7 @@ module.exports.UpdateBlogDTO = Joi.object({
 
     domains: Joi.array().items(Joi.string()).required(),
 
-    dateOfPublish: Joi.date().required(),
+    dateOfPublish: Joi.string().required(),
 
     readTime: Joi.string().required(),
 

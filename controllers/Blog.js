@@ -21,25 +21,22 @@ module.exports.GetBlog = async (req, res, next) => {
 
 module.exports.AddBlog = async (req, res, next) => {
 
-    const validate = await AddBlogDTO.validateAsync(req.body)
+    await AddBlogDTO.validateAsync(req.body)
 
-    if (validate.value === {}) {
+    const { authors, domains, dateOfPublish, readTime, title, mainImage, content } = req.body
 
-        const { authors, domains, dateOfPublish, readTime, title, mainImage, content } = req.body
+    const blog = await Blog.create({
+        authors: authors,
+        domains: domains,
+        dateOfPublish: dateOfPublish,
+        readTime: readTime,
+        mainImage: mainImage,
+        content: content,
+        title: title
+    })
 
-        const blog = await Blog.create({
-            authors: authors,
-            domains: domains,
-            dateOfPublish: dateOfPublish,
-            readTime: readTime,
-            mainImage: mainImage,
-            content: content,
-            title: title
-        })
-
-        if (blog) {
-            return res.status(200).json(blog)
-        }
+    if (blog) {
+        return res.status(200).json(blog)
     }
 
     return res.status(400).json({
@@ -50,10 +47,10 @@ module.exports.AddBlog = async (req, res, next) => {
 module.exports.UpdateBlog = async (req, res, next) => {
 
     const validate = await UpdateBlogDTO.validateAsync(req.body)
-    
-    
+
+
     if (validate.value === {}) {
-        
+
         const { authors, domains, dateOfPublish, readTime, title, mainImage, content, _id } = req.body
 
         const blog = await Blog.findById(_id)

@@ -1,7 +1,7 @@
 module.exports.BlogAuthorize = async (req, res, next) => {
     // role = junior, senior, admin
 
-    if (req.user.role === "junior" || req.user.role === "senior" || req.user.role === "admin") {
+    if (req.user.role === "junior" || req.user.role === "senior") {
         next()
     }
 
@@ -13,13 +13,13 @@ module.exports.BlogAuthorize = async (req, res, next) => {
 }
 
 module.exports.ProjectAuthorize = async (req, res, next, error) => {
-    // role = junior, senior, admin
+    // role = junior, senior
 }
 
 module.exports.EventsAuthorize = async (req, res, next, error) => {
-    // role = senior, admin
+    // role = senior
 }
 
 module.exports.JuniorMentorAuthorize = async (req, res, next, error) => {
-    // role = senior, admin
+    // role = senior
 }

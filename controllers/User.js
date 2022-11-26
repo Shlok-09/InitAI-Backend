@@ -6,6 +6,12 @@ module.exports.AddUser = async (req, res, next) => {
 
     await AddUserDTO.validateAsync(req.body)
 
+    if (req.body.admin_secret !== process.env.ADMIN_SECRET) {
+        return res.status(402).json({
+            message: "Admin access denied"
+    })
+    }
+
     const { email, password, role } = req.body
 
     const salt = await GenerateSalt();
@@ -31,8 +37,6 @@ module.exports.AddUser = async (req, res, next) => {
 
 module.exports.GetUser = async (req, res, next) => {
 
-    await G
-
     const { _id } = req.query
 
     if (_id) {
@@ -52,6 +56,12 @@ module.exports.GetUser = async (req, res, next) => {
 module.exports.UpdateUser = async (req, res, next) => {
 
     await AddUserDTO.validateAsync(req.body)
+
+    if (req.body.admin_secret !== process.env.ADMIN_SECRET) {
+        return res.status(402).json({
+            message: "Admin access denied"
+    })
+    }
 
     const { email, password, role } = req.body
 
@@ -81,6 +91,12 @@ module.exports.UpdateUser = async (req, res, next) => {
 module.exports.DeleteUser = async (req, res, next) => {
 
     await DeleteUserDTO.validateAsync(req.body)
+
+    if (req.body.admin_secret !== process.env.ADMIN_SECRET) {
+        return res.status(402).json({
+            message: "Admin access denied"
+    })
+    }
 
     const { email, password } = req.body
 
