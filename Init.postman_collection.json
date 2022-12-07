@@ -257,6 +257,72 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "Image - Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sairaaj Surve/Desktop/bg.jfif"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/image/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"image",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/image/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -264,7 +330,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzgyNDE1YWM3N2ViOWFkZWMwN2QyZDgiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjY5NDgwODEwLCJleHAiOjE2Njk1NjcyMTB9.22V4RcH5a0bVomKPvgFjBfVdKHL1xxJwZPRwUoG3dJk",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcwNDQzNzg4LCJleHAiOjE2NzA1MzAxODh9.gTPaq9xSkSdJ_5VgLpwdDqdMpmt1DH1lvj_tQqzXXnI",
 				"type": "string"
 			}
 		]
