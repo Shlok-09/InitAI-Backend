@@ -272,7 +272,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "/C:/Users/Sairaaj Surve/Desktop/bg.jfif"
+									"src": "/C:/Users/Sairaaj Surve/Desktop/PBC/Q1.png"
 								}
 							]
 						},
@@ -317,6 +317,35 @@
 								"v1",
 								"image",
 								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image - Get Filtered",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/image/filtered/?contains=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"image",
+								"filtered",
+								""
+							],
+							"query": [
+								{
+									"key": "contains",
+									"value": ""
+								}
 							]
 						}
 					},

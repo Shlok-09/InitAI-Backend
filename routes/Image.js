@@ -1,12 +1,14 @@
 const express = require('express');
 const { uploadImage } = require('../utility')
-const { AddImage, GetAllFiles  } = require('../controllers')
+const { AddImage, GetAllImageNames, FilteredImageNames  } = require('../controllers')
 
 const { Authenticate } = require('../middlewares');
 
 const router = express.Router();
 
-router.get('/all', GetAllFiles)
+router.get('/all', GetAllImageNames)
+
+router.get('/filtered', FilteredImageNames)
 
 router.use(Authenticate)
 
