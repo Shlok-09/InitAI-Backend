@@ -10,7 +10,7 @@ module.exports.GetBlog = async (req, res, next) => {
         const blog = await Blog.findById(_id)
 
         if (blog) {
-            return res.status(200).json(blog.content)
+            return res.status(200).json(blog)
         }
     }
 
@@ -52,20 +52,24 @@ module.exports.UpdateBlog = async (req, res, next) => {
 
     const blog = await Blog.findById(_id)
 
-    blog.content = content
-    blog.authors = authors
-    blog.domains = domains
-    blog.dateOfPublish = dateOfPublish
-    blog.readTime = readTime
-    blog.title = title
-    blog.mainImage = mainImage
+    if (blog) {
 
-    const result = await blog.save()
 
-    if (result) {
-        return res.status(200).json(blog)
+        blog.content = content
+        blog.authors = authors
+        blog.domains = domains
+        blog.dateOfPublish = dateOfPublish
+        blog.readTime = readTime
+        blog.title = title
+        blog.mainImage = mainImage
+
+        const result = await blog.save()
+
+        if (result) {
+            return res.status(200).json(result)
+        }
+
     }
-
     return res.status(400).json({
         message: "Something wrong with UpdateBlog"
     })

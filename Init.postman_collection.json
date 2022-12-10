@@ -352,6 +352,132 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Project - Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"My Project\",\r\n    \"description\": \"My Project Description\",\r\n    \"domains\": [\"CV\", \"DNN\"],\r\n    \"techStack\": [\"TensorFlow\", \"Python\"],\r\n    \"images\":[\"Image 1\",\"Image 2\"],\r\n    \"videoUrl\": \"my video\",\r\n    \"contributors\": [\"Contributor 1\", \"Contributor 2\"],\r\n    \"githubLink\": \"My Github\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/project/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project - Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/project/?_id=6394e575ae11e81f945dbaf1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								""
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "6394e575ae11e81f945dbaf1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"My Project\",\r\n    \"description\": \"My Project Description\",\r\n    \"domains\": [\"CV\", \"DNN\"],\r\n    \"techStack\": [\"TensorFlow\", \"Python\"],\r\n    \"images\":[\"Image 1\",\"Image 2\"],\r\n    \"videoUrl\": \"my video\",\r\n    \"contributors\": [\"Contributor 1\", \"Contributor 2\", \"Contributor 3\"],\r\n    \"githubLink\": \"My Github\",\r\n    \"_id\": \"6394e575ae11e81f945dbaf1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/project/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"6394e575ae11e81f945dbaf1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/project/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -359,7 +485,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcwNDQzNzg4LCJleHAiOjE2NzA1MzAxODh9.gTPaq9xSkSdJ_5VgLpwdDqdMpmt1DH1lvj_tQqzXXnI",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcwNzAyMDczLCJleHAiOjE2NzA3ODg0NzN9.siYh24vcKVf59yMQRqOElO5cPqfga_Xix9Z59uZRtp0",
 				"type": "string"
 			}
 		]

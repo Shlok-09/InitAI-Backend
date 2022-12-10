@@ -13,7 +13,15 @@ module.exports.BlogAuthorize = async (req, res, next) => {
 }
 
 module.exports.ProjectAuthorize = async (req, res, next, error) => {
-    // role = junior, senior
+    if (req.user.role === "junior" || req.user.role === "senior") {
+        next()
+    }
+
+    else {
+        return res.status(401).json({
+            message: "Unauthorized Role"
+        })
+    }
 }
 
 module.exports.EventsAuthorize = async (req, res, next, error) => {
