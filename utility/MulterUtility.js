@@ -7,14 +7,14 @@ const imageStorage = multer.diskStorage({
     },
 
     filename: (req, file, cb) => {
-        if (path.extname(file.originalname) === ".png" || path.extname(file.originalname) === ".jpg" || path.extname(file.originalname) === ".jpeg") {
+        if (path.extname(file.originalname) === ".png" || path.extname(file.originalname) === ".jpg" || path.extname(file.originalname) === ".jpeg" || path.extname(file.originalname) === ".gif") {
             const today = new Date();
             const date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
             const time = today.getHours() + "-" + today.getMinutes() + "-" + today.getSeconds();
             const dateTime = date + '_' + time;
             return cb(null, dateTime + '-'+ file.originalname)
         }
-        return cb('Only .png, .jpg and .jpeg format allowed!')
+        return cb('Only .png, .jpg, .jpeg and .gif format allowed!')
     }
 })
 
