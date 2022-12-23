@@ -354,6 +354,101 @@
 			]
 		},
 		{
+			"name": "File",
+			"item": [
+				{
+					"name": "File - Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Sairaaj Surve/Desktop/PBC/public/app.js"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/file/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"file",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "File - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/file/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"file",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "File - Get Filtered",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/file/filtered/?contains=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"file",
+								"filtered",
+								""
+							],
+							"query": [
+								{
+									"key": "contains",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Project",
 			"item": [
 				{
@@ -485,7 +580,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcwNzAyMDczLCJleHAiOjE2NzA3ODg0NzN9.siYh24vcKVf59yMQRqOElO5cPqfga_Xix9Z59uZRtp0",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcxNzg3MjcwLCJleHAiOjE2NzE4NzM2NzB9.5JjNZuQWKg7ry6Ic_IrYfQf6PSVm54qLnr9LHr9ZIew",
 				"type": "string"
 			}
 		]

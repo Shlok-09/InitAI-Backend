@@ -2,6 +2,7 @@ const { GetBlog, AddBlog, UpdateBlog, DeleteBlog } = require('./Blog')
 const { GetUser, AddUser, UpdateUser, DeleteUser, UserLogin } = require('./User')
 const { AddImage, GetAllImageNames, FilteredImageNames } = require('./Image')
 const { AddProject, DeleteProject, GetProject, UpdateProject } = require('./Project')
+const { AddFile, GetAllFileNames, FilteredFileNames } = require('./File')
 
 module.exports.GetBlog = GetBlog
 module.exports.AddBlog = AddBlog
@@ -19,3 +20,6 @@ module.exports.GetProject = GetProject
 module.exports.AddProject = AddProject
 module.exports.UpdateProject = UpdateProject
 module.exports.DeleteProject = DeleteProject
+module.exports.GetAllFileNames = GetAllFileNames
+module.exports.AddFile = AddFile
+module.exports.FilteredFileNames = FilteredFileNames
