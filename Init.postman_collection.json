@@ -573,6 +573,132 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Lecture",
+			"item": [
+				{
+					"name": "Lecture - Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic\": \"My Topic\",\r\n    \"lecturers\": [\"Aakash\",\"Sairaaj\"],\r\n    \"date\": \"23-12-22\",\r\n    \"images\": [\"Image1\", \"Image2\"],\r\n    \"assignments\": [\"Assignments1\", \"Assignments2\"],\r\n    \"classNotes\": [\"ClassNote1\", \"ClassNote2\"],\r\n    \"description\": \"My Description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/lecture/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"lecture",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lecture - Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/lecture/?_id=63a58a19a7190ec92f4bd570",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"lecture",
+								""
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "63a58a19a7190ec92f4bd570"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lecture - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topic\": \"My Topic 2\",\r\n    \"lecturers\": [\"Aakash\",\"Sairaaj\"],\r\n    \"date\": \"23-12-22\",\r\n    \"images\": [\"Image1\", \"Image2\"],\r\n    \"assignments\": [\"Assignments1\", \"Assignments2\"],\r\n    \"classNotes\": [\"ClassNote1\", \"ClassNote2\"],\r\n    \"description\": \"My Description\",\r\n    \"_id\": \"63a589968517b8757e78a9e9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/lecture/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"lecture",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lecture - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"63a58a19a7190ec92f4bd570\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/lecture/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"lecture",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
