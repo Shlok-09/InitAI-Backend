@@ -5,20 +5,17 @@ const fs = require('fs');
 const { App } = require('./services/ExpressApp')
 const { dbConnection } = require('./services/Database')
 
-const imagesFolder = './images';
-const filesFolder = './files';
-
 const PORT = process.env.PORT || 8000
 const MONGO_URI = process.env.MONGO_URI
 
 const StartServer = async () => {
 
-    if (!fs.existsSync(imagesFolder)) {
-        fs.mkdirSync(imagesFolder)
+    if (!fs.existsSync('./images')) {
+        fs.mkdirSync('./images')
     }
 
-    if (!fs.existsSync(filesFolder)) {
-        fs.mkdirSync(filesFolder)
+    if (!fs.existsSync('./files')) {
+        fs.mkdirSync('./files')
     }
 
     const app = express()

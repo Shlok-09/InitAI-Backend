@@ -1,6 +1,4 @@
 module.exports.BlogAuthorize = async (req, res, next) => {
-    // role = junior, senior, admin
-
     if (req.user.role === "junior" || req.user.role === "senior") {
         next()
     }
@@ -13,6 +11,18 @@ module.exports.BlogAuthorize = async (req, res, next) => {
 }
 
 module.exports.ProjectAuthorize = async (req, res, next, error) => {
+    if (req.user.role === "junior" || req.user.role === "senior") {
+        next()
+    }
+
+    else {
+        return res.status(401).json({
+            message: "Unauthorized Role"
+        })
+    }
+}
+
+module.exports.LectureAuthorize = async (req, res, next, error) => {
     if (req.user.role === "junior" || req.user.role === "senior") {
         next()
     }
