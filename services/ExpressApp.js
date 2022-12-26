@@ -8,6 +8,10 @@ module.exports.App = async (app) => {
     app.use(express.urlencoded({ extended: true }));
     app.use(cors())
 
+    app.get('/', async (req, res, next) => {
+        return res.status(200).send("<h1>Init Backend Index</h1>")
+    })
+
     app.use('/api/v1/blog', BlogRouter)
     app.use('/api/v1/user', UserRouter)
     app.use('/api/v1/image', ImageRouter)
