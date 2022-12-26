@@ -19,6 +19,13 @@ module.exports.GetBlog = async (req, res, next) => {
     })
 }
 
+module.exports.GetAllBlogs = async (req, res, next) => {
+    
+    const blogs = await Blog.find({})
+
+    return res.status(200).json(blogs)
+}
+
 module.exports.AddBlog = async (req, res, next) => {
 
     await AddBlogDTO.validateAsync(req.body)

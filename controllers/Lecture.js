@@ -19,6 +19,13 @@ module.exports.GetLecture = async (req, res, next) => {
     })
 }
 
+module.exports.GetAllLectures = async (req, res, next) => {
+    
+    const lectures = await Lecture.find({})
+
+    return res.status(200).json(lectures)
+}
+
 module.exports.AddLecture = async (req, res, next) => {
     await AddLectureDTO.validateAsync(req.body)
 

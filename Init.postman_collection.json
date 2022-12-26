@@ -129,6 +129,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Blog - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/blog/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"all"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -251,6 +273,28 @@
 									"key": "_id",
 									"value": "6390ab7e0107cf90414cb7a3"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"all"
 							]
 						}
 					},
@@ -571,6 +615,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Project - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/project/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								"all"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -697,6 +763,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Lecture - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/lecture/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"lecture",
+								"all"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -706,7 +794,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcxNzg3MjcwLCJleHAiOjE2NzE4NzM2NzB9.5JjNZuQWKg7ry6Ic_IrYfQf6PSVm54qLnr9LHr9ZIew",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcyMDY2MzA2LCJleHAiOjE2NzIxNTI3MDZ9.ARCu4ubWFsQq_AIEnh6v0ZBMILQvgTOzEwZNYfCRK8M",
 				"type": "string"
 			}
 		]

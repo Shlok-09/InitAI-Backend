@@ -4,7 +4,7 @@ const cors = require('cors')
 const { BlogRouter, UserRouter, ImageRouter, ProjectRouter, FileRouter, LectureRouter } = require('../routes')
 
 module.exports.App = async (app) => {
-    app.use(express.json());
+    app.use(express.json())
     app.use(express.urlencoded({ extended: true }));
     app.use(cors())
 
