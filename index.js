@@ -10,14 +10,6 @@ const MONGO_URI = process.env.MONGO_URI
 
 const StartServer = async () => {
 
-//     if (!fs.existsSync('./images')) {
-//         fs.mkdirSync('./images')
-//     }
-
-//     if (!fs.existsSync('./files')) {
-//         fs.mkdirSync('./files')
-//     }
-
     const app = express()
 
     await dbConnection(MONGO_URI)
