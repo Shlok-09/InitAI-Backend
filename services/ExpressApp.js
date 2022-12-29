@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 
 const { BlogRouter, UserRouter, ImageRouter, ProjectRouter, FileRouter, LectureRouter } = require('../routes')
-const url = 'https://smoggy-worm-windbreaker.cyclic.app/'
+const url = ''
 
 module.exports.App = async (app) => {
     app.use(express.json());
