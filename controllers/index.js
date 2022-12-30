@@ -4,6 +4,7 @@ const { AddImage, GetAllImageNames, FilteredImageNames } = require('./Image')
 const { AddProject, DeleteProject, GetProject, UpdateProject, GetAllProjects } = require('./Project')
 const { AddFile, GetAllFileNames, FilteredFileNames } = require('./File')
 const { AddLecture, DeleteLecture, GetLecture, UpdateLecture, GetAllLectures } = require('./Lecture')
+const { AddGuide, DeleteGuide, GetGuide, UpdateGuide, GetAllGuides } = require('./Guide')
 
 module.exports.GetBlog = GetBlog
 module.exports.AddBlog = AddBlog
@@ -32,3 +33,8 @@ module.exports.AddLecture = AddLecture
 module.exports.UpdateLecture = UpdateLecture
 module.exports.DeleteLecture = DeleteLecture
 module.exports.GetAllLectures = GetAllLectures
+module.exports.GetGuide = GetGuide
+module.exports.AddGuide = AddGuide
+module.exports.UpdateGuide = UpdateGuide
+module.exports.DeleteGuide = DeleteGuide
+module.exports.GetAllGuides = GetAllGuides
