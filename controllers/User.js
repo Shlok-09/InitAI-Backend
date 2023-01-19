@@ -53,6 +53,14 @@ module.exports.GetUser = async (req, res, next) => {
     })
 }
 
+module.exports.GetAllUsers = async (req, res, next) => {
+    
+    const users = await User.find({})
+
+    return res.status(200).json(users)
+}
+
+
 module.exports.UpdateUser = async (req, res, next) => {
 
     await AddUserDTO.validateAsync(req.body)

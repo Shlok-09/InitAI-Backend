@@ -74,7 +74,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"_id\": \"6370bdb9dcd22af367321667\",\r\n    \"content\": \"<h1>Auth Test</h1><br><img src=\\\"https://1.cms.s81c.com/sites/default/files/2021-01-06/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork-WHITEBG.png\\\" alt=\\\"\\\" srcset=\\\"\\\">\"\r\n}",
+							"raw": "{\r\n    \"content\": \"<strong>AUTH BLOG</sub>\",\r\n    \"domains\": [\"DL\",\"ML\"],\r\n    \"dateOfPublish\": \"11-26-2022\",\r\n    \"readTime\": \"12m\",\r\n    \"title\": \"title\",\r\n    \"mainImage\": \"image link\",\r\n    \"authors\": [\"6382415ac77eb9adec07d2d8\"],\r\n    \"_id\": \"6370bdb9dcd22af367321667\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,7 +108,7 @@
 							"raw": "{\r\n    \"_id\": \"638244a27719d7f8011f0d26\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/v1/blog/?_id=638244a27719d7f8011f0d26",
+							"raw": "http://localhost:8000/api/v1/blog/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -119,12 +119,171 @@
 								"v1",
 								"blog",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blog - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/blog/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"blog",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guide",
+			"item": [
+				{
+					"name": "Guide - Add",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topicName\": \"My Topic\",\r\n    \"duration\": \"My Duration 1 + My Duration 2\",\r\n    \"tutorials\": [\r\n        {\r\n            \"tutorialName\": \"My Tutorial 1\",\r\n            \"tutorialLink\": \"My TutorialLink 1\",\r\n            \"duration\": \"My Duration 1\",\r\n            \"comments\": \"My Comments\"\r\n        },\r\n        {\r\n            \"tutorialName\": \"My Tutorial 2\",\r\n            \"tutorialLink\": \"My TutorialLink 2\",\r\n            \"duration\": \"My Duration 2\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/guide/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"guide",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guide - Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/guide/?_id=63ae9b22206b684f082ecf96",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"guide",
+								""
 							],
 							"query": [
 								{
 									"key": "_id",
-									"value": "638244a27719d7f8011f0d26"
+									"value": "63ae9b22206b684f082ecf96"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guide - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"topicName\": \"My Topic\",\r\n    \"duration\": \"My Duration 1 + My Duration 2 + Extra Duration\",\r\n    \"tutorials\": [\r\n        {\r\n            \"tutorialName\": \"My Tutorial 1\",\r\n            \"tutorialLink\": \"My TutorialLink 1\",\r\n            \"duration\": \"My Duration 1\",\r\n            \"comments\": \"My Comments\"\r\n        },\r\n        {\r\n            \"tutorialName\": \"My Tutorial 2\",\r\n            \"tutorialLink\": \"My TutorialLink 2\",\r\n            \"duration\": \"My Duration 2\"\r\n        }\r\n    ],\r\n    \"_id\": \"63ae9b22206b684f082ecf96\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/guide/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"guide",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guide - Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"638244a27719d7f8011f0d26\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/guide/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"guide",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guide - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/guide/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"guide",
+								"all"
 							]
 						}
 					},
@@ -251,6 +410,28 @@
 									"key": "_id",
 									"value": "6390ab7e0107cf90414cb7a3"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"all"
 							]
 						}
 					},
@@ -571,6 +752,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Project - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/project/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"project",
+								"all"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -697,6 +900,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Lecture - Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/lecture/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"lecture",
+								"all"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
@@ -706,7 +931,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcxNzg3MjcwLCJleHAiOjE2NzE4NzM2NzB9.5JjNZuQWKg7ry6Ic_IrYfQf6PSVm54qLnr9LHr9ZIew",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzkwYWI3ZTAxMDdjZjkwNDE0Y2I3YTMiLCJlbWFpbCI6InNAZy5jb20iLCJyb2xlIjoic2VuaW9yIiwiaWF0IjoxNjcyMzg3MDU4LCJleHAiOjE2NzI0NzM0NTh9.wKAZXi_KCNaEh_5mO653OU-EEhD-ZEh4nEOBdl74vJc",
 				"type": "string"
 			}
 		]

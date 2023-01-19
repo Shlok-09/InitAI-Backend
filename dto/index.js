@@ -2,6 +2,7 @@ const { AddUserDTO, UserLoginDTO, DeleteUserDTO } = require('./User.dto')
 const { AddBlogDTO, UpdateBlogDTO, DeleteBlogDTO } = require('./Blog.dto')
 const { AddProjectDTO, DeleteProjectDTO, UpdateProjectDTO } = require('./Project.dto')
 const { AddLectureDTO, DeleteLectureDTO, UpdateLectureDTO } = require('./Lecture.dto')
+const { AddGuideDTO, DeleteGuideDTO, UpdateGuideDTO } = require('./Guide.dto')
 
 module.exports.AddUserDTO = AddUserDTO
 module.exports.UserLoginDTO = UserLoginDTO
@@ -15,3 +16,6 @@ module.exports.DeleteProjectDTO = DeleteProjectDTO
 module.exports.AddLectureDTO = AddLectureDTO
 module.exports.UpdateLectureDTO = UpdateLectureDTO
 module.exports.DeleteLectureDTO = DeleteLectureDTO
+module.exports.AddGuideDTO = AddGuideDTO
+module.exports.UpdateGuideDTO = UpdateGuideDTO
+module.exports.DeleteGuideDTO = DeleteGuideDTO

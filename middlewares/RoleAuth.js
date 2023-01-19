@@ -34,10 +34,14 @@ module.exports.LectureAuthorize = async (req, res, next, error) => {
     }
 }
 
-module.exports.EventsAuthorize = async (req, res, next, error) => {
-    // role = senior
-}
+module.exports.GuideAuthorize = async (req, res, next, error) => {
+    if (req.user.role === "senior") {
+        next()
+    }
 
-module.exports.JuniorMentorAuthorize = async (req, res, next, error) => {
-    // role = senior
+    else {
+        return res.status(401).json({
+            message: "Unauthorized Role"
+        })
+    }
 }

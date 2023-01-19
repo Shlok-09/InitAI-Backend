@@ -19,6 +19,14 @@ module.exports.GetProject = async (req, res, next) => {
     })
 }
 
+module.exports.GetAllProjects = async (req, res, next) => {
+    
+    const projects = await Project.find({})
+
+    return res.status(200).json(projects)
+}
+
+
 module.exports.AddProject = async (req, res, next) => {
     await AddProjectDTO.validateAsync(req.body)
 
